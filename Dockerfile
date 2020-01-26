@@ -11,6 +11,7 @@ ARG BLUECHERRY_DB_NAME
 ARG BLUECHERRY_USERHOST
 ARG BLUECHERRY_GROUP_ID
 ARG BLUECHERRY_USER_ID
+ARG BLUECHERRY_TAG
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV MYSQL_ADMIN_LOGIN=$MYSQL_ADMIN_LOGIN
@@ -35,6 +36,7 @@ RUN \
     apt-get install -y git sudo && \
     git clone https://github.com/bluecherrydvr/bluecherry-apps.git && \
     cd bluecherry-apps && \
+    git checkout $BLUECHERRY_TAG && \
     scripts/build_pkg_native.sh
 
 #######################################################
