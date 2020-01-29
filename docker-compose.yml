@@ -26,6 +26,7 @@ services:
           BLUECHERRY_USERHOST: $BLUECHERRY_USERHOST
           BLUECHERRY_GROUP_ID: $BLUECHERRY_GROUP_ID
           BLUECHERRY_USER_ID: $BLUECHERRY_USER_ID
+          BLUECHERRY_TAG: v2.8.8
     restart: unless-stopped
     volumes:
       - /mnt/security:/recordings
